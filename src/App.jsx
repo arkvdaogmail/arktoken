@@ -111,15 +111,15 @@ return (
         value={category}
         onChange={e => setCategory(e.target.value)}
       >
-        <option>Business</option>
-        <option>DAO</option>
-        <option>Spiritual</option>
-        <option>Personal</option>
-        <option>Enterprise</option>
-        <option>Startup</option>
-        <option>Nonprofit</option>
-        <option>Creator</option>
-        <option>Gov/Legal</option>
+        <option value="Business">Business</option>
+        <option value="DAO">DAO</option>
+        <option value="Spiritual">Spiritual</option>
+        <option value="Personal">Personal</option>
+        <option value="Enterprise">Enterprise</option>
+        <option value="Startup">Startup</option>
+        <option value="Nonprofit">Nonprofit</option>
+        <option value="Creator">Creator</option>
+        <option value="GovLegal">GovLegal</option>
       </select>
       <button
         type="button"
@@ -131,4 +131,3 @@ return (
     {hashID && <p>Generated ID: {hashID}</p>}
   </div>
 );
-
