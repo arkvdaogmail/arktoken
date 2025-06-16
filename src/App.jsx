@@ -61,6 +61,30 @@ export default function RegistryApp() {
     }
   };
 
+  const handleRegister = async () => {
+    const payload = {
+      name: bizName,
+      domain: domain,
+      wallet: bizWallet,
+      fileCid: ""
+    };
+
+    try {
+      const res = await fetch("https://arktoken-three.vercel.app/api/register", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload)
+      });
+
+      const data = await res.json();
+      console.log("Registry response:", data);
+      alert(`✅ Registered on Meep!\nHash: ${data.hash}\nTx: ${data.tx}`);
+    } catch (err) {
+      console.error("Register error:", err);
+      alert("❌ Registration failed.");
+    }
+  };
+
   return (
     <div>
       <h2>ArkMeep Business Registry</h2>
@@ -79,7 +103,7 @@ export default function RegistryApp() {
           <option>Creator</option>
           <option>Gov/Legal</option>
         </select>
-        <button type="submit">Register</button>
+        <button type="button" onClick={handleRegister}>Register</button>
       </form>
       {hashID && <p>Generated ID: {hashID}</p>}
     </div>
