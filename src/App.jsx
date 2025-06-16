@@ -103,7 +103,8 @@ export default function RegistryApp() {
         <option>Creator</option>
         <option>Gov/Legal</option>
       </select>
-      <button type="button" onClick={handleRegister} style={{ backgroundColor: '#333', color: '#f0f0f0', padding: '0.5rem 1rem', marginTop: '1rem' }}>Register</button>
+      <button type="button" onClick={handleRegister} style={{ backgroundColor: '#333', color: '#f0f0f0', padding: '0.5rem 1rem', marginTop: '1rem' }}>
+p: '1rem' }}>Register</button>
     </form>
     {hashID && <p>Generated ID: {hashID}</p>}
   </div>
