@@ -85,27 +85,26 @@ export default function RegistryApp() {
     }
   };
 
-  return (
-    <div>
-      <h2>ArkMeep Business Registry</h2>
-      <form onSubmit={handleSubmit}>
-        <input value={bizName} onChange={e => setBizName(e.target.value)} placeholder="Business Name" required />
-        <input value={domain} onChange={e => setDomain(e.target.value)} placeholder="Business Domain" required />
-        <input value={bizWallet} onChange={e => setBizWallet(e.target.value)} placeholder="Wallet Address" required />
-        <select value={category} onChange={e => setCategory(e.target.value)}>
-          <option>Business</option>
-          <option>DAO</option>
-          <option>Spiritual</option>
-          <option>Personal</option>
-          <option>Enterprise</option>
-          <option>Startup</option>
-          <option>Nonprofit</option>
-          <option>Creator</option>
-          <option>Gov/Legal</option>
-        </select>
-        <button type="button" onClick={handleRegister}>Register</button>
-      </form>
-      {hashID && <p>Generated ID: {hashID}</p>}
-    </div>
-  );
-}
+ return (
+  <div style={{ backgroundColor: '#121212', color: '#f0f0f0', minHeight: '100vh', padding: '2rem', fontFamily: 'Arial' }}>
+    <h2>ArkMeep Business Registry</h2>
+    <form onSubmit={handleSubmit}>
+      <input value={bizName} onChange={e => setBizName(e.target.value)} placeholder="Business Name" required style={{ backgroundColor: '#1e1e1e', color: '#f0f0f0', margin: '0.5rem', padding: '0.5rem' }} />
+      <input value={domain} onChange={e => setDomain(e.target.value)} placeholder="Business Domain" required style={{ backgroundColor: '#1e1e1e', color: '#f0f0f0', margin: '0.5rem', padding: '0.5rem' }} />
+      <input value={bizWallet} onChange={e => setBizWallet(e.target.value)} placeholder="Wallet Address" required style={{ backgroundColor: '#1e1e1e', color: '#f0f0f0', margin: '0.5rem', padding: '0.5rem' }} />
+      <select value={category} onChange={e => setCategory(e.target.value)} style={{ backgroundColor: '#1e1e1e', color: '#f0f0f0', margin: '0.5rem', padding: '0.5rem' }}>
+        <option>Business</option>
+        <option>DAO</option>
+        <option>Spiritual</option>
+        <option>Personal</option>
+        <option>Enterprise</option>
+        <option>Startup</option>
+        <option>Nonprofit</option>
+        <option>Creator</option>
+        <option>Gov/Legal</option>
+      </select>
+      <button type="button" onClick={handleRegister} style={{ backgroundColor: '#333', color: '#f0f0f0', padding: '0.5rem 1rem', marginTop: '1rem' }}>Register</button>
+    </form>
+    {hashID && <p>Generated ID: {hashID}</p>}
+  </div>
+);
