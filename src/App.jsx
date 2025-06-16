@@ -85,27 +85,50 @@ export default function RegistryApp() {
     }
   };
 
-  return (
-    <div>
-      <h2>ArkMeep Business Registry</h2>
-      <form onSubmit={handleSubmit}>
-        <input value={bizName} onChange={e => setBizName(e.target.value)} placeholder="Business Name" required />
-        <input value={domain} onChange={e => setDomain(e.target.value)} placeholder="Business Domain" required />
-        <input value={bizWallet} onChange={e => setBizWallet(e.target.value)} placeholder="Wallet Address" required />
-        <select value={category} onChange={e => setCategory(e.target.value)}>
-          <option>Business</option>
-          <option>DAO</option>
-          <option>Spiritual</option>
-          <option>Personal</option>
-          <option>Enterprise</option>
-          <option>Startup</option>
-          <option>Nonprofit</option>
-          <option>Creator</option>
-          <option>Gov/Legal</option>
-        </select>
-        <button type="button" onClick={handleRegister}>Register</button>
-      </form>
-      {hashID && <p>Generated ID: {hashID}</p>}
-    </div>
-  );
-}
+return (
+  <div>
+    <h2>ArkMeep Business Registry</h2>
+    <form onSubmit={handleSubmit}>
+      <input
+        value={bizName}
+        onChange={e => setBizName(e.target.value)}
+        placeholder="Business Name"
+        required
+      />
+      <input
+        value={domain}
+        onChange={e => setDomain(e.target.value)}
+        placeholder="Business Domain"
+        required
+      />
+      <input
+        value={bizWallet}
+        onChange={e => setBizWallet(e.target.value)}
+        placeholder="Wallet Address"
+        required
+      />
+      <select
+        value={category}
+        onChange={e => setCategory(e.target.value)}
+      >
+        <option>Business</option>
+        <option>DAO</option>
+        <option>Spiritual</option>
+        <option>Personal</option>
+        <option>Enterprise</option>
+        <option>Startup</option>
+        <option>Nonprofit</option>
+        <option>Creator</option>
+        <option>Gov/Legal</option>
+      </select>
+      <button
+        type="button"
+        onClick={handleRegister}
+      >
+        Register
+      </button>
+    </form>
+    {hashID && <p>Generated ID: {hashID}</p>}
+  </div>
+);
+
